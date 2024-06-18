@@ -3,6 +3,7 @@ type: page
 title: Photos
 date: 2021-03-18
 ---
+import { CldImage } from 'next-cloudinary';
 
 # Photos
 
@@ -10,12 +11,17 @@ Here's some of my photography.
 
 import Image from 'next/image'
 
-<Image
-  src="/images/photo2.jpg"
+<CldImage
+  deliveryType="fetch"
+  src="/v1/alan-veas-mountains_lmtilx.jpg"
   alt="Photo"
   width={1125}
   height={750}
   priority
+  sizes="(min-width: 480px ) 50vw,
+  (min-width: 728px) 33vw,
+  (min-width: 976px) 25vw,
+  100vw"
   className="next-image"
 />
 [Unsplash ↗ ](https://unsplash.com/photos/WeYamle9fDM)
